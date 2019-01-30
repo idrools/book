@@ -1,4 +1,5 @@
 #!/bin/bash
-cd /path/to/your-project
-git pull origin master
+cd  /usr/local/www/
+git clone git@github.com:idrools/book.git
+
 echo 'travis build done!'
