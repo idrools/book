@@ -17,6 +17,7 @@ script:
   - gitbook build
 after_script:
   - echo "Hello World"
+  - ls
   - scp -r _book/  git@94.191.80.51:/usr/local/www/book
   only:
   - master
