@@ -1,18 +1,21 @@
 language: node_js
-node_js: stable  #设置相应的版本
+node_js: stable
 install:
-  - npm install gitbook-cli -g  #安装hexo及插件
+- npm install gitbook-cli -g
 script:
-  - gitbook install
-  - gitbook build
+- gitbook install
+- gitbook build
 after_script:
-  - echo "Hello World"
+- echo "Hello World"
 branches:
   only:
-    - master
+  - master
 notifications:
   email:
-    - idrools007@gmail.com
-    - zxh877027287@gmail.com
+  - idrools007@gmail.com
+  - zxh877027287@gmail.com
   on_success: change
   on_failure: always
+idrools/book:
+- openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
+  -in github_travis.enc -out ~\/.ssh/github_travis -d
