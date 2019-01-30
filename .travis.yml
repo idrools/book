@@ -2,3 +2,17 @@ language: node_js
 node_js: stable  #设置相应的版本
 install:
   - npm install  #安装hexo及插件
+script:
+  - gitbook install
+  - gitbook build
+after_script:
+  - echo "Hello World"
+branches:
+  only:
+    - master
+notifications:
+  email:
+    - idrools007@gmail.com
+    - zxh877027287@gmail.com
+  on_success: change
+  on_failure: always
