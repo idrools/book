@@ -12,9 +12,14 @@ install:
 script:
 - gitbook install
 - gitbook build
+before_install:
+- echo "before_install Hello World"
+- openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
+  -in github_travis.enc -out ~/.ssh/github_travis -d
+- chmod 600 ~/.ssh/id_rsa
 after_script:
 - scp -o stricthostkeychecking=no -r _book/  root@94.191.80.51:/usr/local/www/book
-- echo "Hello World"
+- echo "after_script Hello World"
 branches:
   only:
   - master
@@ -24,6 +29,6 @@ notifications:
   - zxh877027287@gmail.com
   on_success: change
   on_failure: always
-idrools/book:
-- openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
-  -in github_travis.enc -out ~/.ssh/github_travis -d
+#idrools/book:
+#- openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
+#  -in github_travis.enc -out ~/.ssh/github_travis -d
