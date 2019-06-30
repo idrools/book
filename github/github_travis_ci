@@ -1,0 +1,12 @@
+github配置使用travis构建hexo并上传到github.io，
+_config。yml 配置文件中将部署地址设置为gitee的地址，我们使用travis配置github将在提交的时候自动构建并部署到github-pages服务
+https://api.github.com/meta
+192.30.252.0  github
+185.199.108.0 github
+140.82.112.0  github
+13.229.188.59 github
+13.250.177.223 github
+18.194.104.89 github
+18.195.85.27 github
+35.159.8.160 github
+52.74.223.119 github
