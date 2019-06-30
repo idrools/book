@@ -15,8 +15,9 @@ script:
 before_install:
 - echo "before_install Hello World"
 - openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
-  -in github_travis.enc -out ~\/.ssh/github_travis -d
-#- chmod 600 ~/.ssh/github_travis
+  -in github_travis.enc -out ~/.ssh/github_travis -d
+- chmod 600 ~/.ssh/github_travis
+- echo -e "Host 94.191.80.51\n\tStrictHostKeyChecking no\n\tIdentityFile ~/.ssh/github_travis" >> ~/.ssh/config
 after_script:
 - scp -o stricthostkeychecking=no -r _book/  root@94.191.80.51:/usr/local/www/book
 - echo "after_script Hello World"
