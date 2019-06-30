@@ -16,7 +16,7 @@ before_install:
 - echo "before_install Hello World"
 - openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
   -in github_travis.enc -out ~/.ssh/github_travis -d
-- chmod 600 ~/.ssh/id_rsa
+#- chmod 600 ~/.ssh/github_travis
 after_script:
 - scp -o stricthostkeychecking=no -r _book/  root@94.191.80.51:/usr/local/www/book
 - echo "after_script Hello World"
