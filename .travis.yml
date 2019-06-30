@@ -1,21 +1,21 @@
 language: node_js
 node_js: stable
 addons:
-  ssh_known_hosts: 
-    - github.com
-    - 192.30.253.113
-    - gitee.com
-    - 120.55.226.24
-    - 94.191.80.51
+  ssh_known_hosts:
+  - github.com
+  - 192.30.253.113
+  - gitee.com
+  - 120.55.226.24
+  - 94.191.80.51
 install:
-  - npm install gitbook-cli -g
+- npm install gitbook-cli -g
 script:
-  - gitbook install
-  - gitbook build
-  - ls
-  - scp -r _book/  git@94.191.80.51:/usr/local/www/book
+- gitbook install
+- gitbook build
+- ls
+- scp -r _book/  git@94.191.80.51:/usr/local/www/book
 after_script:
-  - echo "Hello World"
+- echo "Hello World"
 branches:
   only:
   - master
@@ -26,4 +26,7 @@ notifications:
   on_success: change
   on_failure: always
 idrools/book:
-  - openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv -in github_travis.enc -out ~/.ssh/github_travis -d
+- openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
+  -in github_travis.enc -out ~\/.ssh/github_travis -d
+- openssl aes-256-cbc -K $encrypted_a8fc4b24cb2e_key -iv $encrypted_a8fc4b24cb2e_iv
+  -in github_travis.enc -out ~/.ssh/github_travis -d
