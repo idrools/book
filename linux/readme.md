@@ -33,3 +33,20 @@ mysqldump --single-transaction --default-character-set=gbk -uabc -pabc -t -w'id=
 Linux 代理服务squid 用法
 https://www.cnblogs.com/he-ding/p/10038264.html
 
+sysctl list vm.overcommit_memory=1
+http://www.redicecn.com/html/Linux/20131125/468.html
+
+ps 命令显示不全
+  两种方法
+
+  1.ps-ef |more 哈哈，利用more换行，慢慢看吧，能完全显示了吧
+
+  2.什么？不想翻屏，好吧好吧，仔细看ps的man吧，你会看到这样一行
+
+-w              Wide output. Use this option twice for unlimited width.很简单对吧，看完你就知道怎么用了。是的，是的，知道你很聪明，没错，就是这样滴
+
+ps -efww  OK，完全搞定，所有内容全部显示。
+
+  自此，得出一个结论，man的力量是无穷大滴，大到让你无法想象哦。
+
+  有机会，就来man一下吧！
