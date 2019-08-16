@@ -26,4 +26,10 @@ mysqldump --single-transaction --default-character-set=gbk -uabc -pabc -t -w'id=
 
 -w后边跟where条件，只导出符合条件的数据
 
+--ssh-keygen -t rsa -b 4096 -C "备注信息"
+
+无外网ip服务器如何访问访问外网?
+
+Linux 代理服务squid 用法
+https://www.cnblogs.com/he-ding/p/10038264.html
 
